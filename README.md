@@ -17,5 +17,7 @@ store-management/database/login-reg(09-30-17).sql import the .sql file in your p
 
 edit the base url in the config file so that the styles and script will load correctly
 
+change the database name in the config.php to your new created database name
+
 
 
