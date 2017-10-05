@@ -8,6 +8,11 @@ class Home extends CI_Controller {
 		$this->load->library(array('session'));
 		$this->load->helper(array('url'));
 		$this->load->model('home_model','home');
+		$this->load->helper('form');
+		if($_SESSION['logged_in'] == null){
+		 	redirect(base_url('/login')); 
+		 }  
+		
 	}
 
 	Public function index()
@@ -47,8 +52,21 @@ class Home extends CI_Controller {
 	public function test(){
 		echo "<h1>working test</h1>";
 	}
+    public function Admin(){
 
+    	 $this->load->view('user/Admin_lte_theme/Admin_lte_header');
+    	  $this->load->view('user/store/Admin_lte_add_store_form');
+    	 $this->load->view('user/Admin_lte_theme/Admin_lte_leftsidebar');
+    	 $this->load->view('user/Admin_lte_theme/Admin_lte_footer');
+    	$this->load->view('user/Admin_lte_theme/Admin_lte_rightsidebar');
+    }
 }
 
 /* End of file home.php */
 /* Location: ./application/controllers/home.php */
+	
+
+
+/* End of file home.php */
+/* Location: ./application/controllers/home.php */
+?>
