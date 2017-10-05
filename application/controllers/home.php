@@ -60,6 +60,16 @@ class Home extends CI_Controller {
     	 $this->load->view('user/Admin_lte_theme/Admin_lte_footer');
     	$this->load->view('user/Admin_lte_theme/Admin_lte_rightsidebar');
     }
+
+     public function login(){
+
+     	 $this->load->view('user/Admin_lte_theme/Admin_lte_header');
+     	 $this->load->view('user/login/Admin_lte_login_form');
+
+     	// $this->load->view('user/Admin_lte_theme/Admin_lte_footer'); 
+     	 $this->load->view('user/Admin_lte_theme/Admin_lte_scripts_footer');
+     }
+
 }
 
 /* End of file home.php */
