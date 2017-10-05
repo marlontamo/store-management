@@ -52,7 +52,7 @@ class Home extends CI_Controller {
 	public function test(){
 		echo "<h1>working test</h1>";
 	}
-    public function Admin(){
+    public function Add_product(){
 
     	 $this->load->view('user/Admin_lte_theme/Admin_lte_header');
     	  $this->load->view('user/store/Admin_lte_add_store_form');
@@ -68,6 +68,9 @@ class Home extends CI_Controller {
 
      	// $this->load->view('user/Admin_lte_theme/Admin_lte_footer'); 
      	 $this->load->view('user/Admin_lte_theme/Admin_lte_scripts_footer');
+     }
+     public function validate(){
+     	return;
      }
 
 }

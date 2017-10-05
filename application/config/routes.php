@@ -62,3 +62,5 @@ $route['translate_uri_dashes'] = FALSE;
 //store routes
 
 $route['create'] = 'store/index';
+//Product
+$route['add_product'] = 'home/add_product';
