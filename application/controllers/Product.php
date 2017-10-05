@@ -29,7 +29,32 @@ class Product extends CI_Controller {
 		
 	}
 	
-	
+	public function add_product(){
+       $data['product_info']= array(
+       						'product_id'    =>  $this->input->post('product_id'),
+                            'product_title' =>  $this->input->post('product_title'),
+                            'product_desc'  =>   $this->input->post('product_desc'),
+                            'added_by'      =>    $this->input->post('added_by'),
+                            'product_store' =>    $this->input->post('owned_by'),
+                            'created_date'  =>     $this->input->post('created_date'),
+                            'updated_date'  =>    $this->input->post('updated_date')
+        	);
+
+
+
+
+    if($data == null){
+      return;
+    }else{
+    	$result = $this->product->insert($data);
+    	if($result == 1){
+    		echo "<h1>new product was added</h1>";
+    		//redirect('/home/admin');
+    	}else{
+    		echo "<h1> the product that you are trying to add was not added please try again later</h1>";
+    	}
+    }
+	}
 	public function create()
 	{
       
@@ -38,7 +63,7 @@ class Product extends CI_Controller {
 	}
 	/*controller function  in creating new store*/
 	public function getvar(){
-		echo "motherfucker";
+		
 	}
     /*controller function in updating store*/
 	Public function update($id)
@@ -82,11 +107,9 @@ class Product extends CI_Controller {
     } 
 	public function StoreList(){
         
-
          $data['information'] = $this->store->get_all_store();
          $this->load->view('user/store/storeList',$data);
-          //echo "<pre>";
-          //print_r($data);
+         
 
 	}
 	public function Logout()
@@ -94,5 +117,7 @@ class Product extends CI_Controller {
         $this->session->sess_destroy();
         redirect('login');
     }
+    public function save($data){
 
+    }
 }
