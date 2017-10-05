@@ -1,8 +1,8 @@
 <div class="content-wrapper">
 <section class="content-header">
       <h1>
-        Advanced Form Elements
-        <small>Preview</small>
+       Store Management System 
+        <small>dashboard</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -18,26 +18,54 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="../../index2.html" method="post">
+   <?php echo form_open('home/validate');?>
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <!-- <input type="email" class="form-control" placeholder="Email"> -->
+        <?php $username = array(
+                                      'type'  => 'text',
+                                      'name'  => 'username',
+                                      'id'    =>  'inputEmail3',
+                                      'placeholder' => 'Username',
+                                      'class' => 'form-control'
+                              );
+
+                              echo form_input($username); ?>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+       <!--  <input type="password" class="form-control" placeholder="Password"> -->
+        <?php $pass = array(
+                                      'type'  => 'password',
+                                      'name'  => 'password',
+                                      'id'    =>  'inputEmail3',
+                                      'placeholder' => 'password',
+                                      'class' => 'form-control'
+                              );
+
+                              echo form_input($pass); ?>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
         <div class="col-xs-8">
-          <div class="checkbox icheck">
+          <!-- <div class="checkbox icheck">
             <label>
               <input type="checkbox"> Remember Me
             </label>
-          </div>
+          </div> -->
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+        <?php $submit = array(
+                                      'type'  => 'submit',
+                                      'name'  => 'login',
+                                      'id'    =>  'inputEmail3',
+                                      'value' => 'Sign In',
+                                      //'placeholder' => 'Product Title',
+                                      'class' => 'btn btn-primary btn-block btn-flat'
+                              );
+
+                              echo form_input($submit); ?>
+          <!-- <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button> -->
         </div>
         <!-- /.col -->
       </div>

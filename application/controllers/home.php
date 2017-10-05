@@ -72,6 +72,11 @@ class Home extends CI_Controller {
      public function validate(){
      	return;
      }
+     public function list_products(){
+     	$this->load->view('user/Admin_lte_theme/Admin_lte_header');
+     	echo "<h1>product List:</h1>";
+     	$this->load->view('user/Admin_lte_theme/Admin_lte_scripts_footer');
+     }
 
 }
 
