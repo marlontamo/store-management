@@ -60,5 +60,18 @@ class Store_model extends CI_Model {
     {
        return $this->db->get('store')->result();
     }
+    public function view_my_stores($id= null){
+         $this->db->select('*');
+		 $this->db->from('store');
+		 $this->db->where('user_id',$id);
+
+		 $result = $this->db->get()->result_array();
+		 if ($id == null) {
+		 	return;
+		 }else{
+       return $result;
+	     }
+ 
+	}
 }
 

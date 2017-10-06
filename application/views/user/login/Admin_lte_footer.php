@@ -38,5 +38,11 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets/Admin_lte/dist/js/demo.js');?>
 "></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#draggable" ).draggable();
+  } );
+  </script>
 </body>
 </html>

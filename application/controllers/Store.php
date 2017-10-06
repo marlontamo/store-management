@@ -22,7 +22,7 @@ class Store extends CI_Controller {
 		$this->load->model('store_model','store');
 		$this->load->helper('form');
 		$this->load->database();
-		$this->load->library('xmlrpc');
+		
 		
 	}
 	
@@ -91,10 +91,10 @@ class Store extends CI_Controller {
 		echo json_encode($data);
 
 	}
-    public function view( $id)
+    public function view($id= null)
     {
           $data['storeData'] = $this->store->view($id);
-          $this->load->view('user/store/storeView',$data);
+          $this->load->view('user/store/storeProfile',$data);
     } 
 	public function StoreList(){
         
@@ -105,5 +105,11 @@ class Store extends CI_Controller {
           //print_r($data);
 
 	}
+	public function get_store($id= null){
+		$data['storeData']=$this->store->view_my_stores($id);
+		$this->load->view('user/store/storeView',$data);
+		;
+	}
 
 }
+

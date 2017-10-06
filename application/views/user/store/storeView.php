@@ -11,13 +11,14 @@
 	</div>
 
 	<div class="col-md-4">
-	<?php 
-    foreach ($storeData as $key) {
-    	echo "<h4>store name:".$key->store_name."</h4>";
-    	echo  "<h4>store owner:".$key->user_id."</h4>";
+	<ul><?php $url= base_url();
+	foreach ($storeData as $key => $val) {
+         // var_dump($val->store_name);
+		echo"<li><a href='".$url."store/view/".$val['store_id']."'>".$val['store_name']."</a></li>";
     }
+    
 	 ?>
-		
+		</ul>
 		
 	</div>
 

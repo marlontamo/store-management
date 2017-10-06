@@ -9,7 +9,7 @@
         <li><a href="#">Forms</a></li>
         <li class="active">Advanced Elements</li>
       </ol>-->
-      
+
         <?php if (validation_errors()) : ?>
       <div class="col-md-12">
         <div class="alert alert-danger" role="alert">
@@ -25,16 +25,17 @@
       </div>
     <?php endif; ?>
     </section>
-<div class="login-box">
+<div class="login-box" id="draggable">
   <div class="login-logo">
-    <a href=><b>Admin</b>LTE</a>
+    <a href=><b>store</b>-Management</a>
   </div>
   <!-- /.login-logo -->
-  <div class="login-box-body">
+  <div class="login-box-body" >
     <p class="login-box-msg">Sign in to start your session</p>
 
    <?php echo form_open('user/login');?>
       <div class="form-group has-feedback">
+
         <!-- <input type="email" class="form-control" placeholder="Email"> -->
         <?php $username = array(
                                       'type'  => 'text',
@@ -96,7 +97,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">I forgot my password</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a>
+    <a href="#" class="text-center">Register a new membership</a>
 
   </div>
   <!-- /.login-box-body -->
