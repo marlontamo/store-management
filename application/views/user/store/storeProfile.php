@@ -1,7 +1,7 @@
 <?php $this->load->view('header'); ?>
 <h1> Store Profile</h1>
 <div class="row">
-<?php echo "<h1>".$_SESSION['user_id']."</h1>"; ?>
+<?php #echo "<h1>".$_SESSION['user_id']."</h1>"; ?>
 
  <table class="table-hover table">
  	<thead>

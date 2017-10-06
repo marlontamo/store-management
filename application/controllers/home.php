@@ -9,9 +9,9 @@ class Home extends CI_Controller {
 		$this->load->helper(array('url'));
 		$this->load->model('home_model','home');
 		$this->load->helper('form');
-		if($_SESSION['logged_in'] == null){
-		 	redirect(base_url('/login')); 
-		 }  
+		// if($_SESSION['logged_in'] == null){
+		//  	redirect(base_url('login')); 
+		//  }  
 		
 	}
 

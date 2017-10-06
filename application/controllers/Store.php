@@ -22,7 +22,9 @@ class Store extends CI_Controller {
 		$this->load->model('store_model','store');
 		$this->load->helper('form');
 		$this->load->database();
-		
+		if($_SESSION['logged_in'] == null){
+		 	redirect(base_url('home/login')); 
+		 }  
 		
 	}
 	

@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Product_model extends CI_Model {
-    //private $dbtable = 'store';
+    private $dbtable = 'products';
 	public function __construct()
 	{  
 		parent::__construct();
@@ -17,17 +17,17 @@ class Product_model extends CI_Model {
 	}
 	Public function edit($id)
 	{
-		return $this->db->get_where($this->dbtable ,array('store_id'=>$id))->result();
+		return $this->db->get_where($this->dbtable ,array('product_store'=>$id))->result();
 	}
 	Public function view($id)
 	{
-		return $this->db->get_where($this->dbtable,array('store_id'=>$id))->result();
+		return $this->db->get_where($this->dbtable,array('product_store'=>$id))->result();
 	}
 
     public function get_user_by_id($id)
 
     {
-    	$data = $this->db->get_where($this->dbtable,array('user_id'=>$id))->result();
+    	$data = $this->db->get_where($this->dbtable,array('product_store'=>$id))->result();
     	return $data[0]->username;
     }
 	Public function update($id)

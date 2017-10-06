@@ -10,21 +10,7 @@
         <li><a href="#">Forms</a></li>
         <li class="active">Advanced Elements</li>
       </ol> -->
-      <h1>HALA</h1></section></br>
-        <?php if (validation_errors()) : ?>
-      <div class="col-md-12">
-        <div class="alert alert-danger" role="alert">
-          <?= validation_errors() ?>
-        </div>
-      </div>
-    <?php endif; ?>
-    <?php if (isset($error)) : ?>
-      <div class="col-md-12">
-        <div class="alert alert-danger" role="alert">
-          <?= $error ?>
-        </div>
-      </div>
-    <?php endif; ?>
+      <?php echo "<h1>".$_SESSION['user_id']."</h1>"; ?>
     </section>
 
     <!-- Main content -->
@@ -134,8 +120,8 @@
       <?php 
       $product_id = uniqid(); // this will gernerate unique product id
       $created_date= date("Y-m-d H:i:s");//createddate and updated date
-      $store_id = 24;// store Id
-      $user_id = 2;//place the php variable of the 
+      $store_id = 8;// store Id
+      $user_id = $_SESSION['user_id'];//place the php variable of the 
       $product_id = array(
                                       'type'  => 'hidden',
                                       'name'  => 'product_id',

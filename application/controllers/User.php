@@ -23,6 +23,9 @@ class User extends CI_Controller {
 		$this->load->model('user_model');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
+		// if($_SESSION['logged_in'] == null){
+		//  	redirect(base_url('login')); 
+		//  }  
 	}
 	
 	
@@ -127,7 +130,7 @@ class User extends CI_Controller {
 				$user    = $this->user_model->get_user($user_id);
 				
 				// set session user datas
-                  
+                 
 				$_SESSION['user_id']      = (int)$user->user_id;
 				$_SESSION['username']     = (string)$user->username;
 				$_SESSION['logged_in']    = (bool)true;

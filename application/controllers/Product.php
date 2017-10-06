@@ -23,8 +23,9 @@ class Product extends CI_Controller {
 		$this->load->model('user_model','user');
 		$this->load->helper('form');
 		$this->load->database();
-		$this->load->library('xmlrpc');
-        
+		if($_SESSION['logged_in'] == null){
+		 	redirect(base_url('home/login')); 
+		 }  
 		
 		
 	}
@@ -33,11 +34,11 @@ class Product extends CI_Controller {
        $data['product_info']= array(
        						'product_id'    =>  $this->input->post('product_id'),
                             'product_title' =>  $this->input->post('product_title'),
-                            'product_desc'  =>   $this->input->post('product_desc'),
-                            'added_by'      =>    $this->input->post('added_by'),
-                            'product_store' =>    $this->input->post('owned_by'),
-                            'created_date'  =>     $this->input->post('created_date'),
-                            'updated_date'  =>    $this->input->post('updated_date')
+                            'product_desc'  =>  $this->input->post('product_desc'),
+                            'added_by'      =>  $this->input->post('added_by'),
+                            'product_store' =>  $this->input->post('owned_by'),
+                            'created_date'  =>  $this->input->post('created_date'),
+                            'updated_date'  =>  $this->input->post('updated_date')
         	);
 
 
@@ -49,7 +50,7 @@ class Product extends CI_Controller {
     	$result = $this->product->insert($data);
     	if($result == 1){
     		echo "<h1>new product was added</h1>";
-    		//redirect('/home/admin');
+    		//redirect('/home/add_product');
     	}else{
     		echo "<h1> the product that you are trying to add was not added please try again later</h1>";
     	}
@@ -119,5 +120,15 @@ class Product extends CI_Controller {
     }
     public function save($data){
 
+    }
+    public function get_product($id= null){
+       
+       if($id == null){
+           echo "<h1>invalid Id</h1>";
+       }else{
+       	 $data['storeProducts']= $this->product->view($id);
+       	 echo "<pre>";
+       	 print_r($data);
+       }
     }
 }
