@@ -1,6 +1,6 @@
 <div class="content-wrapper">
-<section class="content-header">
-      <h1>
+ <section class="content-header">
+     <!-- <h1>
        Store Management System 
         <small>dashboard</small>
       </h1>
@@ -8,7 +8,22 @@
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Forms</a></li>
         <li class="active">Advanced Elements</li>
-      </ol>
+      </ol>-->
+      
+        <?php if (validation_errors()) : ?>
+      <div class="col-md-12">
+        <div class="alert alert-danger" role="alert">
+          <?= validation_errors() ?>
+        </div>
+      </div>
+    <?php endif; ?>
+    <?php if (isset($error)) : ?>
+      <div class="col-md-12">
+        <div class="alert alert-danger" role="alert">
+          <?= $error ?>
+        </div>
+      </div>
+    <?php endif; ?>
     </section>
 <div class="login-box">
   <div class="login-logo">
@@ -18,7 +33,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-   <?php echo form_open('home/validate');?>
+   <?php echo form_open('user/login');?>
       <div class="form-group has-feedback">
         <!-- <input type="email" class="form-control" placeholder="Email"> -->
         <?php $username = array(

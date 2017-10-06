@@ -17,7 +17,8 @@ class Home extends CI_Controller {
 
 	Public function index()
 	{
-		$this->load->view('home');
+		echo"<h1>hi this is home</h1>";
+		//$this->load->view('home');
 	}
 
 	Public function insert()
@@ -63,19 +64,17 @@ class Home extends CI_Controller {
 
      public function login(){
 
-     	 $this->load->view('user/Admin_lte_theme/Admin_lte_header');
+     	 $this->load->view('user/login/Admin_lte_header');
      	 $this->load->view('user/login/Admin_lte_login_form');
-
-     	// $this->load->view('user/Admin_lte_theme/Admin_lte_footer'); 
-     	 $this->load->view('user/Admin_lte_theme/Admin_lte_scripts_footer');
+     	 $this->load->view('user/login/Admin_lte_footer');
      }
      public function validate(){
      	return;
      }
      public function list_products(){
-     	$this->load->view('user/Admin_lte_theme/Admin_lte_header');
+     	$this->load->view('user/login/Admin_lte_header');
      	echo "<h1>product List:</h1>";
-     	$this->load->view('user/Admin_lte_theme/Admin_lte_scripts_footer');
+     	$this->load->view('user/login/Admin_lte_footer');
      }
 
 }

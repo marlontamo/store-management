@@ -1,7 +1,7 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
+     <!--  <h1>
         Advanced Form Elements
         <small>Preview</small>
       </h1>
@@ -9,12 +9,27 @@
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">Forms</a></li>
         <li class="active">Advanced Elements</li>
-      </ol>
+      </ol> -->
+      <h1>HALA</h1></section></br>
+        <?php if (validation_errors()) : ?>
+      <div class="col-md-12">
+        <div class="alert alert-danger" role="alert">
+          <?= validation_errors() ?>
+        </div>
+      </div>
+    <?php endif; ?>
+    <?php if (isset($error)) : ?>
+      <div class="col-md-12">
+        <div class="alert alert-danger" role="alert">
+          <?= $error ?>
+        </div>
+      </div>
+    <?php endif; ?>
     </section>
 
     <!-- Main content -->
     <section class="content">
-
+           
       <!-- SELECT2 EXAMPLE -->
       <?php echo form_open('product/add_product');
       

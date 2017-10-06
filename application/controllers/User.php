@@ -21,7 +21,8 @@ class User extends CI_Controller {
 		$this->load->library(array('session'));
 		$this->load->helper(array('url'));
 		$this->load->model('user_model');
-		
+		$this->load->helper('form');
+		$this->load->library('form_validation');
 	}
 	
 	
@@ -42,9 +43,8 @@ class User extends CI_Controller {
 		// create the data object
 		$data = new stdClass();
 		
-		// load form helper and validation library
-		$this->load->helper('form');
-		$this->load->library('form_validation');
+		
+		
 		
 		// set validation rules
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|alpha_numeric|min_length[4]|is_unique[users.username]', array('is_unique' => 'This username already exists. Please choose another one.'));
@@ -101,8 +101,6 @@ class User extends CI_Controller {
 		$data = new stdClass();
 		
 		// load form helper and validation library
-		$this->load->helper('form');
-		$this->load->library('form_validation');
 		
 		// set validation rules
 		$this->form_validation->set_rules('username', 'Username', 'required|alpha_numeric');
@@ -111,15 +109,17 @@ class User extends CI_Controller {
 		if ($this->form_validation->run() == false) {
 			
 			// validation not ok, send validation errors to the view
-			$this->load->view('header');
-			$this->load->view('user/login/login');
-			$this->load->view('footer');
+			 $this->load->view('user/login/Admin_lte_header');
+     	 $this->load->view('user/login/Admin_lte_login_form');
+     	 $this->load->view('user/login/Admin_lte_footer');
 			
 		} else {
 			
 			// set variables from the form
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
+
+
 			
 			if ($this->user_model->resolve_user_login($username, $password)) {
 				
@@ -143,11 +143,11 @@ class User extends CI_Controller {
 				
 				// login failed
 				$data->error = 'Wrong username or password.';
-				
+				 
 				// send error to the view
-				$this->load->view('header');
-				$this->load->view('user/login/login', $data);
-				$this->load->view('footer');
+		  $this->load->view('user/login/Admin_lte_header');
+     	 $this->load->view('user/login/Admin_lte_login_form', $data);
+     	 $this->load->view('user/login/Admin_lte_footer');
 				
 			}
 			
