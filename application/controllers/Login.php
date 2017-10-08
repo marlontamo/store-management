@@ -1,12 +1,22 @@
 <?php
+/*
+* Login class contents:
+*->methods:
+* 1->Registration
+* 2->Login
+* 3->Logout
+* soon:
+* 4->forgot_pass 
+*
+*/
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * User class.
+ * 
  * 
  * @extends CI_Controller
  */
-class User extends CI_Controller {
+class Login extends CI_Controller {
 
 	/**
 	 * __construct function.
@@ -45,7 +55,6 @@ class User extends CI_Controller {
 		
 		// create the data object
 		$data = new stdClass();
-		
 		
 		
 		
@@ -138,11 +147,9 @@ class User extends CI_Controller {
 				$_SESSION['is_admin']     = (bool)$user->is_admin;
 				
 				// user login ok
-				 $this->load->view('user/Admin_lte_theme/Admin_lte_header');
-    	 		 $this->load->view('user/Admin_lte_theme/Admin_lte_user_Profile',$data);
-    	 		 $this->load->view('user/Admin_lte_theme/Admin_lte_leftsidebar');
-    	 		 $this->load->view('user/Admin_lte_theme/Admin_lte_footer');
-    			 $this->load->view('user/Admin_lte_theme/Admin_lte_rightsidebar');
+				$this->load->view('header');
+				$this->load->view('user/login/login_success', $data);
+				$this->load->view('footer');
 				
 			} else {
 				
@@ -167,37 +174,32 @@ class User extends CI_Controller {
 	 * @return void
 	 */
 	public function logout() {
-		
+		$this->session->sess_destroy();
+        redirect('login');
 		// create the data object
-		$data = new stdClass();
+		//$data = new stdClass();
 		
-		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+		// if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
 			
-			// remove session datas
-			foreach ($_SESSION as $key => $value) {
-				unset($_SESSION[$key]);
-			}
+		// 	// remove session datas
+		// 	foreach ($_SESSION as $key => $value) {
+		// 		unset($_SESSION[$key]);
+		// 	}
 			
-			// user logout ok
-			$this->load->view('header');
-			$this->load->view('user/logout/logout_success', $data);
-			$this->load->view('footer');
+		// 	// user logout ok
+		// 	$this->load->view('header');
+		// 	$this->load->view('user/logout/logout_success', $data);
+		// 	$this->load->view('footer');
 			
-		} else {
+		// } else {
 			
-			// there user was not logged in, we cannot logged him out,
-			// redirect him to site root
-			redirect('/');
+		// 	// the user was not logged in, we cannot logged him out,
+		// 	// redirect him to site root
+		// 	//redirect('/');
 			
-		}
+		// }
 		
 	}
-	public function user_profile(){
-		  $this->load->view('user/Admin_lte_theme/Admin_lte_header');
-    	  $this->load->view('user/Admin_lte_theme/Admin_lte_user_Profile');
-    	 $this->load->view('user/Admin_lte_theme/Admin_lte_leftsidebar');
-    	 $this->load->view('user/Admin_lte_theme/Admin_lte_footer');
-    	$this->load->view('user/Admin_lte_theme/Admin_lte_rightsidebar');
-	}
+	
 	
 }

@@ -10,7 +10,7 @@
         <li><a href="#">Forms</a></li>
         <li class="active">Advanced Elements</li>
       </ol> -->
-      <?php echo "<h1>".$_SESSION['user_id']."</h1>"; ?>
+     
     </section>
 
     <!-- Main content -->
