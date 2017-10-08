@@ -33,7 +33,7 @@
   <div class="login-box-body" >
     <p class="login-box-msg">Sign in to start your session</p>
 
-   <?php echo form_open('user/login');?>
+   <?php echo form_open('login_ctrl/login');?>
       <div class="form-group has-feedback">
 
         <!-- <input type="email" class="form-control" placeholder="Email"> -->

@@ -50,8 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['register'] = 'user/register';
-$route['login'] = 'login/login';
-$route['logout'] = 'login/logout';
+$route['login'] = 'login_ctrl/login';
+$route['logout'] = 'login_ctrl/logout';
 $route['install'] = 'user/install';
 $route['home'] = 'home';
 $route['test'] = 'home/test';
@@ -65,3 +65,5 @@ $route['create'] = 'store/index';
 //Product
 $route['add_product'] = 'home/add_product';
 $route['productlist'] = 'home/list_products';
+
+$route['profile'] = 'user/user_profile';

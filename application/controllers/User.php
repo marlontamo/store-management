@@ -23,9 +23,9 @@ class User extends CI_Controller {
 		$this->load->model('user_model');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
-		// if($_SESSION['logged_in'] == null){
-		//  	redirect(base_url('login')); 
-		//  }  
+		 if($_SESSION['logged_in'] == null){
+		  	redirect(base_url('login')); 
+		  }  
 	}
 	
 	
@@ -193,11 +193,17 @@ class User extends CI_Controller {
 		
 	}
 	public function user_profile(){
+		//$data = new stdClass();
+		$username= "marlon";
+		$user_id = 2;
+		$data['user'] = array ('username'=> $username,
+						'user_id' =>$user_id );
+
 		  $this->load->view('user/Admin_lte_theme/Admin_lte_header');
-    	  $this->load->view('user/Admin_lte_theme/Admin_lte_user_Profile');
-    	 $this->load->view('user/Admin_lte_theme/Admin_lte_leftsidebar');
-    	 $this->load->view('user/Admin_lte_theme/Admin_lte_footer');
-    	$this->load->view('user/Admin_lte_theme/Admin_lte_rightsidebar');
+    	  $this->load->view('user/Admin_lte_theme/Admin_lte_user_Profile',$data);
+    	  $this->load->view('user/Admin_lte_theme/Admin_lte_leftsidebar');
+    	  $this->load->view('user/Admin_lte_theme/Admin_lte_footer');
+    	  $this->load->view('user/Admin_lte_theme/Admin_lte_rightsidebar');
 	}
 	
 }

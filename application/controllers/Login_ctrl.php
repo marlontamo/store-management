@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * 
  * @extends CI_Controller
  */
-class Login extends CI_Controller {
+class Login_ctrl extends CI_Controller {
 
 	/**
 	 * __construct function.
@@ -34,8 +34,8 @@ class Login extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		// if($_SESSION['logged_in'] == null){
-		//  	redirect(base_url('login')); 
-		//  }  
+		//   	redirect(base_url('login')); 
+	 //  }  
 	}
 	
 	
@@ -149,6 +149,7 @@ class Login extends CI_Controller {
 				// user login ok
 				$this->load->view('header');
 				$this->load->view('user/login/login_success', $data);
+				
 				$this->load->view('footer');
 				
 			} else {
@@ -160,7 +161,7 @@ class Login extends CI_Controller {
 		  $this->load->view('user/login/Admin_lte_header');
      	 $this->load->view('user/login/Admin_lte_login_form', $data);
      	 $this->load->view('user/login/Admin_lte_footer');
-				
+				redirect(base_url('profile'));
 			}
 			
 		}
@@ -175,7 +176,7 @@ class Login extends CI_Controller {
 	 */
 	public function logout() {
 		$this->session->sess_destroy();
-        redirect('login');
+        redirect(base_url('login'));
 		// create the data object
 		//$data = new stdClass();
 		
