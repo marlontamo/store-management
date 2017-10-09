@@ -129,6 +129,12 @@ class Store extends CI_Controller {
         $this->load->view('user/store/Admin_lte_store_list', $data);
     	$this->load->view('user/Admin_lte_theme/Admin_lte_scripts_footer');
     }
-
+    public function get_my_store($id= null){
+		$data['stores']=$this->store->view_my_stores($id);
+		
+        $this->load->view('user/store/storelist', $data);
+    	
+		
+	}
 }
 

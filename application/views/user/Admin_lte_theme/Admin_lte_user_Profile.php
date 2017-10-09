@@ -3,7 +3,7 @@
     <section class="content-header">
       <h1>
         User Profile
-
+       <?php echo $_SESSION['user_id'];  ?>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>

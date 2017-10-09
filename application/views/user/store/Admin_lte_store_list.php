@@ -20,9 +20,9 @@
                 </thead>
                 <tbody>
                 <?php 
-          foreach ($stores as $key) { ?>
-            
-                <tr>
+          foreach ($stores as $key) { 
+               print_r($key['store_id']); ?>
+                   <tr>
                   <td><?php echo $key->store_id; ?></td>
                   <td><?php echo $key->store_name; ?>
                   </td>
