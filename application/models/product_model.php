@@ -59,6 +59,15 @@ class Product_model extends CI_Model {
     {
        return $this->db->get($this->dbtable)->result();
     }
-    
+     public function get_username_by_id($id)
+     {
+    	$data = $this->db->get_where('users' ,array('user_id'=>$id))->result();
+    	return $data[0]->username;
+    }
+    public function get_storename_by_id($id)
+     {
+    	$store = $this->db->get_where('store' ,array('store_id'=>$id))->result();
+    	return $store[0]->store_name;
+    }
 }
 

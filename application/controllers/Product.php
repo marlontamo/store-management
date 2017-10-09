@@ -118,9 +118,7 @@ class Product extends CI_Controller {
         $this->session->sess_destroy();
         redirect('login');
     }
-    public function save($data){
-
-    }
+   
     public function get_product($id= null){
        
        if($id == null){
@@ -131,4 +129,19 @@ class Product extends CI_Controller {
        	 print_r($data);
        }
     }
+    public function get_mystore_product($store_id = null)
+    {
+              
+          $data['stores'] = $this->product->view($store_id);
+    	$this->load->view('user/Admin_lte_theme/Admin_lte_header');
+    	$this->load->view('user/Admin_lte_theme/Admin_lte_leftsidebar');
+        $this->load->view('user/product/Admin_lte_mystore_product_list', $data);
+    	$this->load->view('user/Admin_lte_theme/Admin_lte_scripts_footer');
+    }
+    public function store($id =null)
+    {
+    	 $store = $this->product->get_storename_by_id($id); 
+    	 var_dump($store);
+    }
+
 }
