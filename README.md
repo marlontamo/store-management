@@ -19,5 +19,14 @@ edit the base url in the config file so that the styles and script will load cor
 
 change the database name in the config.php to your new created database name
 
+framework used:
 
+ for frontend:
+
+   I used Admin_lte dashboard template.
+
+
+ backend:
+   
+    codeigniter 3 for server side.   
 
