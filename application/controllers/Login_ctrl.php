@@ -147,27 +147,24 @@ class Login_ctrl extends CI_Controller {
 				$_SESSION['is_admin']     = (bool)$user->is_admin;
 				
 				// user login ok
-				$this->load->view('header');
-				$this->load->view('user/login/login_success', $data);
+				// $this->load->view('header');
+				// $this->load->view('user/login/login_success', $data);
 				
-				$this->load->view('footer');
-				
+				// $this->load->view('footer');
+				redirect(base_url('profile'));
 			} else {
 				
 				// login failed
 				$data->error = 'Wrong username or password.';
 				 
 				// send error to the view
-		  $this->load->view('user/login/Admin_lte_header');
-     	 $this->load->view('user/login/Admin_lte_login_form', $data);
-     	 $this->load->view('user/login/Admin_lte_footer');
-				redirect(base_url('profile'));
+		        $this->load->view('user/login/Admin_lte_header');
+     	        $this->load->view('user/login/Admin_lte_login_form', $data);
+     	        $this->load->view('user/login/Admin_lte_footer');
+				
 			}
-			
-		}
-		
 	}
-	
+}/*end login method*/
 	/**
 	 * logout function.
 	 * 
@@ -177,29 +174,6 @@ class Login_ctrl extends CI_Controller {
 	public function logout() {
 		$this->session->sess_destroy();
         redirect(base_url('login'));
-		// create the data object
-		//$data = new stdClass();
-		
-		// if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-			
-		// 	// remove session datas
-		// 	foreach ($_SESSION as $key => $value) {
-		// 		unset($_SESSION[$key]);
-		// 	}
-			
-		// 	// user logout ok
-		// 	$this->load->view('header');
-		// 	$this->load->view('user/logout/logout_success', $data);
-		// 	$this->load->view('footer');
-			
-		// } else {
-			
-		// 	// the user was not logged in, we cannot logged him out,
-		// 	// redirect him to site root
-		// 	//redirect('/');
-			
-		// }
-		
 	}
 	
 	

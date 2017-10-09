@@ -1,0 +1,50 @@
+<?php $this->load->view('user/Admin_lte_theme/Admin_lte_header'); ?>
+<?php $this->load->view('user/Admin_lte_theme/Admin_lte_leftsidebar'); ?>
+ <div class="content-wrapper">
+ <section class="content">
+ <h1> Store Profile</h1>
+<div class="row">
+<?php  ?>
+
+ <table class="table-hover table">
+ 	<thead>
+ 		<th>store name</th>
+ 		<th>store Id</th>
+ 		 <th>Address id</th>
+     <th>Ceated date</th>
+     <th>Updated date</th>
+ 	</thead>
+ 	<tbody>
+ 	     <form action="<?php echo base_url('store/update') ?>" method="post">
+         <?php  
+           
+          foreach ($storeData as $key) {
+            
+            echo "<td><input type='text'name='store_name' class='form-control' value='".$key->store_name."'/>";
+            echo "<td><input type='text'name='store_id' class='form-control' value='".$key->store_id."'/></td>";
+            echo "<td><input type='text'name='address_id' class='form-control' value='".$key->address_id."'/></td>";
+             echo "<td><input type='text'name='created_date' class='form-control' value='".$key->created_date."'/></td>";
+              echo "<td><input type='text'name='updated_date' class='form-control' value='".$key->updated_date."'/></td>";
+           }?>
+          <?php echo form_submit('save','save')?>
+          </form>
+     <div class="row"> 
+     <div class="col-md-8"></div>    
+ 		<div class='dropdown col-md-4'>
+    <button class='btn btn-xs btn-primary dropdown-toggle' type='button' data-toggle='dropdown'>
+    <span class='caret'></span></button>
+    <ul class='dropdown-menu'>
+      <li><a href=''><span class='fa fa-eye' aria-hidden='true'></span>view</a></li>
+      <li><a href=''><span class='fa fa-pencil-square-o' aria-hidden='true'></span>edit</a></li>
+      <li><a href=''><span class='fa fa-trash' aria-hidden='true'></span>delete</a></li>
+    </ul>
+  </div>
+</div>
+ 		</div> 
+ 	</tbody>
+ </table>
+</div>
+
+</section>
+</div>
+<?php $this->load->view('user/Admin_lte_theme/Admin_lte_scripts_footer'); 

@@ -25,11 +25,16 @@ class Store_model extends CI_Model {
 		return $this->db->get_where('store',array('store_id'=>$id))->result();
 	}
 
-    public function get_user_by_id($id)
-
+    public function get_username_by_id($id)
     {
-    	$data = $this->db->get_where('users',array('user_id'=>$id))->result();
-    	return $data[0]->username;
+        
+        $this->db->select('username')
+		 ->from('users')
+		 ->where('user_id',$id);
+    	 
+    	 return $this->db->get()->result();
+    	 
+    	
     }
 	Public function update($id)
 	{
@@ -72,6 +77,13 @@ class Store_model extends CI_Model {
        return $result;
 	     }
  
+	} 
+	Public function modify_store( $id,$data )
+	{
+		
+		$where = array('store_id'=>$id);
+		return $this->db->update('store',$data,$where);
+
 	}
 }
 

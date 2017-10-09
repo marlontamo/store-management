@@ -23,7 +23,7 @@ class Store extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->database();
 		if($_SESSION['logged_in'] == null){
-		 	redirect(base_url('home/login')); 
+		 	redirect(base_url('login')); 
 		 }  
 		
 	}
@@ -59,22 +59,32 @@ class Store extends CI_Controller {
 		
 	}
     /*controller function in updating store*/
-	Public function update($id)
-	{
+	Public function update()
+	{    $data['store_id']= $this->input->post('store_id');
+	     $data['store_name']= $this->input->post('store_name');
+		 $data['user_id']= $this->input->post('user_id');
+		 $data['created_date']= $this->input->post('created_date');
+		 $data['updated_date']= $this->input->post('updated_date');
+		 $data['address_id']= $this->input->post('address_id');
+		 $result=$this->store->modify_store($data['store_id'], $data);
+		   if($result){
+		   	 redirect(base_url('store/storelist'));
+		   }else{
+              echo"<b>update failed</b>";
+		   }
 		
-		echo $this->home->update($id);
 	}
 	/*controller function in editing store data*/
 	Public function edit($id=null)
 	{
 	  
 	   $data['storeData'] = $this->store->edit($id);
-	   $user_name = $this->store->get_user_by_id($data['storeData'][0]->user_id);
-	    
-
+	   $user_name['name'] = $this->store->get_username_by_id();
+	      echo "<pre>";
+	      print_r($user_name['name'][0]->username);
        //echo json_encode($data);
          $this->load->view('user/store/storeProfile',$data);
-    
+    //$data['storeData'][0]->user_id
 	}
 	/*controller function in deleting store*/
 	public function delete()
@@ -97,21 +107,28 @@ class Store extends CI_Controller {
     {
           $data['storeData'] = $this->store->view($id);
           $this->load->view('user/store/storeProfile',$data);
-    } 
-	public function StoreList(){
-        
+    }
+    public function modify($id= null)
+    {     // $data = new stdClass(); 
+          $data['storeData'] = $this->store->view($id);
+          $this->load->view('user/store/storeEditProfile',$data);
 
-         $data['information'] = $this->store->get_all_store();
-         $this->load->view('user/store/storeList',$data);
-          //echo "<pre>";
-          //print_r($data);
-
-	}
+    }  
+	
 	public function get_store($id= null){
 		$data['storeData']=$this->store->view_my_stores($id);
 		$this->load->view('user/store/storeView',$data);
 		;
 	}
+    
+
+    public function storelist(){
+        $data['stores'] = $this->store->get_all_store();
+    	$this->load->view('user/Admin_lte_theme/Admin_lte_header');
+    	$this->load->view('user/Admin_lte_theme/Admin_lte_leftsidebar');
+        $this->load->view('user/store/Admin_lte_store_list', $data);
+    	$this->load->view('user/Admin_lte_theme/Admin_lte_scripts_footer');
+    }
 
 }
 

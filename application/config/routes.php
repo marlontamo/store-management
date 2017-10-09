@@ -56,11 +56,11 @@ $route['install'] = 'user/install';
 $route['home'] = 'home';
 $route['test'] = 'home/test';
 
-$route['default_controller'] = 'forum';
+$route['default_controller'] = 'login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 //store routes
-
+$route['storelist'] = 'store/storelist';
 $route['create'] = 'store/index';
 //Product
 $route['add_product'] = 'home/add_product';
