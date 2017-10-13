@@ -17,13 +17,44 @@
     <section class="content">
            
       <!-- SELECT2 EXAMPLE -->
-      <?php echo form_open('product/add_product');
-      
+      <?php
+        $storeID =$this->session->all_userdata()['__ci_last_regenerate'];
+                   $Updated_Date = date('Y-m-d H:i:s');
+                   $Created_Date = date('Y-m-d H:i:s');
+                   $UserID = $_SESSION['user_id'];
+       echo form_open('store/index');
+           $userhidden = array(
+                  'name'          => 'user_Id',
+                  'id'            => 'updated_date',
+                  'type'          => 'hidden',
+                  'value'          =>  $UserID,
+                  
+          );
+
+          echo form_input($userhidden);
+           $updated_date = array(
+                  'name'          => 'updated_date',
+                  'id'            => 'updated_date',
+                  'type'          => 'hidden',
+                  'value'          =>  $Updated_Date,
+                  
+          );
+
+          echo form_input($updated_date);
+           $created_date = array(
+                  'name'          => 'created_date',
+                  'id'            => 'created_date',
+                  'type'          => 'hidden',
+                  'value'          =>  $Created_Date,
+                  
+          );
+
+          echo form_input($created_date);    
        
       ?>
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title">Select2</h3>
+          <h3 class="box-title">Add Store Form</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
@@ -35,23 +66,23 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label>Product Title</label>
-              <?php $data = array(
-                                      'type'  => 'text',
-                                      'name'  => 'product_title',
-                                      'id'    =>  'inputEmail3',
-                                      'placeholder' => 'Product Title',
-                                      'class' => 'form-control'
-                              );
+                <label>Store Name</label>
+              <?php  $store_name = array(
+                  'name'          => 'store_Name',
+                  'id'            => 'inputEmail3',
+                  'placeholder'   => 'storeName',
+                  'size'          => '50',
+                  'class'         => 'form-control'
+                                   );
 
-                              echo form_input($data); ?>
+          echo form_input($store_name); ?>
               </div>
               <!-- /.form-group -->
               <div class="form-group">
-                <label>Product description</label>
+                <label>Address Id</label>
                 <?php $data = array(
                                       'type'  => 'text',
-                                      'name'  => 'product_desc',
+                                      'name'  => 'location',
                                       'id'    =>  'inputEmail3',
                                       'placeholder' => 'Product description',
                                       'class' => 'form-control'
@@ -112,64 +143,11 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
-          the plugin.
+          Marlon Tamo
         </div>
       </div>
      <!--  hiddenfields -->
-      <?php 
-      $product_id = uniqid(); // this will gernerate unique product id
-      $created_date= date("Y-m-d H:i:s");//createddate and updated date
-      $store_id = 8;// store Id
-      $user_id = $_SESSION['user_id'];//place the php variable of the 
-      $product_id = array(
-                                      'type'  => 'hidden',
-                                      'name'  => 'product_id',
-                                      'id'    =>  'inputEmail3',
-                                      'value' => $product_id,
-                                      'class' => 'form-control'
-                              );
-
-                              echo form_input($product_id); 
-      $added_by = array(
-                                      'type'  => 'hidden',
-                                      'name'  => 'added_by',
-                                      'id'    =>  'inputEmail3',
-                                      'value' => $user_id,
-                                      'class' => 'form-control'
-                              );
-
-                              echo form_input($added_by); 
-      $owner = array(
-                                      'type'  => 'hidden',
-                                      'name'  => 'owned_by',
-                                      'id'    =>  'inputEmail3',
-                                      'value' => $store_id,
-                                      'class' => 'form-control'
-                              );
-
-                              echo form_input($owner);
-      $createddate = array(
-                                      'type'  => 'hidden',
-                                      'name'  => 'created_date',
-                                      'id'    =>  'inputEmail3',
-                                      'value' => $created_date,
-                                      'class' => 'form-control'
-                              );
-
-                              echo form_input($createddate);
-      $updated_date = array(
-                                      'type'  => 'hidden',
-                                      'name'  => 'updated_date',
-                                      'id'    =>  'inputEmail3',
-                                      'value' => $created_date,
-                                      'class' => 'form-control'
-                              );
-
-                              echo form_input($updated_date);
-                              ?>
-    <!--  /hiddefields -->
-      <?php echo form_close(); ?>
+     
       <!-- /.box -->
 <!-- small forms -->
       <!-- <div class="row">

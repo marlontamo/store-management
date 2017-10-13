@@ -27,7 +27,7 @@
                   <td><?php echo $key['store_id']; ?></td>
                   <td><?php echo $key['store_name']; ?>
                   </td>
-                  <td><?php echo $key['store_id']; ?></td>
+                  <td><?php echo $key['user_id']; ?></td>
                   <td><?php echo $key['address_id']; ?></td>
                   <td>
                     <div class="dropdown">

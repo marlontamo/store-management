@@ -20,13 +20,12 @@
                 </thead>
                 <tbody>
                 <?php 
-          foreach ($stores as $key) { 
-               print_r($key['store_id']); ?>
+          foreach ($stores as $key) { ?>
                    <tr>
                   <td><?php echo $key->store_id; ?></td>
                   <td><?php echo $key->store_name; ?>
                   </td>
-                  <td><?php echo $key->user_id; ?></td>
+                  <td><?php echo $this->product->get_username_by_id($key->user_id); ?></td>
                   <td><?php echo $key->address_id; ?></td>
                   <td>
                     <div class="dropdown">
@@ -34,8 +33,8 @@
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <li><a href="<?php echo base_url('store/view').'/'.$key->store_id;?>"><span class="fa fa-eye" aria-hidden="true"></span>view</a></li>
-      <li><a href="<?php echo base_url('edit').'/'.$key->store_id;?>"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>edit</a></li>
-      <li><a href="#"><span class="fa fa-trash" aria-hidden="true"></span>delete</a></li>
+      <li><a href="<?php echo base_url('store/modify').'/'.$key->store_id;?>"><span class="fa fa-pencil-square-o" aria-hidden="true"></span>edit</a></li>
+      <li><a href="<?php echo base_url('store/storedelete').'/'.$key->store_id;?>"><span class="fa fa-trash" aria-hidden="true"></span>delete</a></li>
     </ul>
   </div>
 </div>

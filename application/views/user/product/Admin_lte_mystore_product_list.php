@@ -22,9 +22,7 @@
                 </thead>
                 <tbody>
                 <?php 
-          foreach ($stores as $key) { 
-            //print_r($key);
-            ?>
+          foreach ($stores as $key) { ?>
                  <tr>
                   <td><?php echo $key->product_id; ?></td>
                   <td><?php echo $key->product_title; ?>

@@ -65,7 +65,8 @@ class Store_model extends CI_Model {
     {
        return $this->db->get('store')->result();
     }
-    public function view_my_stores($id= null){
+    public function view_my_stores($id= null)
+    {
          $this->db->select('*');
 		 $this->db->from('store');
 		 $this->db->where('user_id',$id);
@@ -85,5 +86,11 @@ class Store_model extends CI_Model {
 		return $this->db->update('store',$data,$where);
 
 	}
-}
+	public function delete_store($id)
+	{
+		$this->db->where('store_id', $id);
+        $this->db->delete('store');
 
+	}
+    
+}
