@@ -81,7 +81,7 @@
 					);
 
 					echo form_textarea($prod_desc);
-					<input type="number" min="0.00" max="10000.00" step="0.01" />
+					
 					$button = array(
 						        'name'          => 'submit',
 						        'id'            => 'submit',

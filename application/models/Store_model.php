@@ -16,15 +16,20 @@ class Store_model extends CI_Model {
 	    return $this->db->insert_batch('store', $data);
 		
 	}
+
+
 	Public function edit($id)
 	{
 		return $this->db->get_where('store',array('store_id'=>$id))->result();
 	}
+	
+
 	Public function view($id)
 	{
 		return $this->db->get_where('store',array('store_id'=>$id))->result();
 	}
 
+    
     public function get_username_by_id($id)
     {
         
@@ -36,6 +41,8 @@ class Store_model extends CI_Model {
     	 
     	
     }
+	
+
 	Public function update($id)
 	{
 		$data = array('code' => $_POST['code'],
@@ -55,6 +62,8 @@ class Store_model extends CI_Model {
 		return true;
 		
 	}
+	
+
 	Public function get_data()
 	{
 		return $this->db->get('store')->result();
@@ -65,6 +74,8 @@ class Store_model extends CI_Model {
     {
        return $this->db->get('store')->result();
     }
+    
+
     public function view_my_stores($id= null)
     {
          $this->db->select('*');
@@ -79,6 +90,8 @@ class Store_model extends CI_Model {
 	     }
  
 	} 
+	
+
 	Public function modify_store( $id,$data )
 	{
 		
@@ -86,11 +99,20 @@ class Store_model extends CI_Model {
 		return $this->db->update('store',$data,$where);
 
 	}
+	
+
 	public function delete_store($id)
 	{
 		$this->db->where('store_id', $id);
         $this->db->delete('store');
 
 	}
+	
+
+	public function get_storename_by_id($id)
+	{
+		$data = $this->db->get_where('store',array('store_id'=>$id))->result();
+    	return $data[0]->store_name;
+	}
     
-}
+}//class end

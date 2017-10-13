@@ -31,7 +31,8 @@
       <li><a href='<?php echo base_url('store/view')."/".$storeData[0]->store_id; ?>'><span class='fa fa-eye' aria-hidden='true'></span>view</a></li>
       <li><a href='<?php echo base_url('store/modify')."/".$storeData[0]->store_id; ?>'><span class='fa fa-pencil-square-o' aria-hidden='true'></span>edit</a></li>
       <li><a href=''><span class='fa fa-trash' aria-hidden='true'></span>delete</a></li>
-      <li><a href='<?php echo base_url('store/get_my_store')."/".$storeData[0]->store_id; ?>'><span class='fa fa-eye' aria-hidden='true'></span>show my products</a></li>
+      <li><a href='<?php echo base_url('product/get_mystore_product')."/".$storeData[0]->store_id; ?>'><span class='fa fa-eye' aria-hidden='true'></span>show <?php echo $storeData[0]->store_name; ?> products</a></li>
+      <li><a href='<?php echo base_url('store/addstoreproduct')."/".$storeData[0]->store_id; ?>'><span class='fa fa-eye' aria-hidden='true'></span>add product to  <?php echo " ".$storeData[0]->store_name; ?></a></li>
     </ul>
   </div>
 </div>

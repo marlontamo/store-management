@@ -7,7 +7,7 @@
             <div class="box-header">
               <h3 class="box-title">Hover Data Table</h3>
             </div>
-            
+
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example2" class="table table-bordered table-hover">
@@ -22,13 +22,15 @@
                 </thead>
                 <tbody>
                 <?php 
-          foreach ($stores as $key) { ?>
+          foreach ($stores as $key) { 
+             ?>
+                   
                  <tr>
                   <td><?php echo $key->product_id; ?></td>
                   <td><?php echo $key->product_title; ?>
                   </td>
                   <td><?php echo  $this->product->get_username_by_id($key->added_by); ?></td>
-                  <td><?php echo  $this->product->get_storename_by_id(24); ?></td>
+                  <td><?php echo  $this->product->get_storename_by_id($key->product_store); ?></td>
                   <td>
                     <div class="dropdown">
     <button class="btn btn-xs btn-primary dropdown-toggle" type="button" data-toggle="dropdown">

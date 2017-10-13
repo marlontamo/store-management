@@ -40,7 +40,7 @@
     <button class='btn btn-xs btn-primary dropdown-toggle' type='button' data-toggle='dropdown'>
     <span class='caret'></span></button>
     <ul class='dropdown-menu'>
-      <li><a href='<?php echo base_url('store/view')."/".$storeData[0]->store_id; ?>'><span class='fa fa-eye' aria-hidden='true'></span>views</a></li>
+      <li><a href='<?php echo base_url('store/view')."/".$storeData[0]->store_id; ?>'><span class='fa fa-eye' aria-hidden='true'></span>view</a></li>
       <li><a href=''><span class='fa fa-pencil-square-o' aria-hidden='true'></span>edit</a></li>
       <li><a href=''><span class='fa fa-trash' aria-hidden='true'></span>delete</a></li>
     </ul>

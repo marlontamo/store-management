@@ -56,7 +56,7 @@ class Home extends CI_Controller {
     public function Add_product(){
 
     	 $this->load->view('user/Admin_lte_theme/Admin_lte_header');
-    	  $this->load->view('user/store/Admin_lte_add_store_form');
+    	  $this->load->view('user/store/Admin_lte_add_product_to_store');
     	 $this->load->view('user/Admin_lte_theme/Admin_lte_leftsidebar');
     	 $this->load->view('user/Admin_lte_theme/Admin_lte_footer');
     	$this->load->view('user/Admin_lte_theme/Admin_lte_rightsidebar');
