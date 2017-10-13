@@ -2,7 +2,7 @@
 <?php $this->load->view('user/Admin_lte_theme/Admin_lte_leftsidebar'); ?>
  <div class="content-wrapper">
  <section class="content">
- <h1> <?php echo " ".$storeData[0]->store_name; ?> Profile</h1>
+ <h1> Product View Profile</h1>
 <div class="row">
 <?php  ?>
 
@@ -17,11 +17,11 @@
          <?php  
          //print_r();
           foreach ($storeData[0] as $key=> $value) {
-            echo "<tr><td>".$key."</td>";
+            echo "<tr><td><b>".$key."</b></td>";
             echo "<td>".$value."</td></tr>";
            }?>
           
-       
+      
      <div class="row"> 
      <div class="col-md-8"></div>    
  		<div class='dropdown col-md-4'><b>option:</b>

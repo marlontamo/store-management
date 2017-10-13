@@ -20,6 +20,7 @@ class Product extends CI_Controller {
 		$this->load->library(array('session'));
 		$this->load->helper(array('url'));
 		$this->load->model('product_model','product');
+		$this->load->model('store_model','store');
 		$this->load->model('user_model','user');
 		$this->load->helper('form');
 		$this->load->database();
@@ -104,7 +105,7 @@ class Product extends CI_Controller {
     public function view( $id)
     {
           $data['storeData'] = $this->store->view($id);
-          $this->load->view('user/store/storeView',$data);
+          $this->load->view('user/product/Product_view',$data);
     } 
 	public function StoreList(){
         
@@ -141,7 +142,7 @@ class Product extends CI_Controller {
     public function store($id =null)
     {
     	 $store = $this->product->get_storename_by_id($id); 
-    	 var_dump($store);
+    	 //var_dump($store);
     }
 
 }

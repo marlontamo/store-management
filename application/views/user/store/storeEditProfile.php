@@ -36,7 +36,7 @@
           
      <div class="row"> 
      <div class="col-md-8"></div>    
- 		<div class='dropdown col-md-4'>
+ 		<div class='dropdown col-md-4'><b>option:</b>
     <button class='btn btn-xs btn-primary dropdown-toggle' type='button' data-toggle='dropdown'>
     <span class='caret'></span></button>
     <ul class='dropdown-menu'>
