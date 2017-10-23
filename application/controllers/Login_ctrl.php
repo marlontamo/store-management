@@ -31,6 +31,7 @@ class Login_ctrl extends CI_Controller {
 		$this->load->library(array('session'));
 		$this->load->helper(array('url'));
 		$this->load->model('user_model');
+		$this->load->model('store_model','store');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		// if($_SESSION['logged_in'] == null){
@@ -40,8 +41,12 @@ class Login_ctrl extends CI_Controller {
 	
 	
 	public function index() {
-		
-
+		$data['stores'] = $this->store->get_all_store();
+		//echo "<pre>";
+		//print_r($data); 
+        $this->load->view('user/Admin_lte_theme/Admin_lte_header');
+        $this->load->view('user/front_index',$data);
+    	$this->load->view('footer');
 		
 	}
 	
@@ -177,4 +182,7 @@ class Login_ctrl extends CI_Controller {
 	}
 	
 	
+	
 }
+
+

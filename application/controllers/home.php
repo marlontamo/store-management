@@ -76,6 +76,12 @@ class Home extends CI_Controller {
      	echo "<h1>product List:</h1>";
      	$this->load->view('user/login/Admin_lte_footer');
      }
+     public function front(){
+
+    	 $this->load->view('user/Admin_lte_theme/Admin_lte_header');
+        $this->load->view('user/front_index');
+    	$this->load->view('footer');
+    }
 
 }
 

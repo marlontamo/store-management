@@ -63,11 +63,7 @@ class Product extends CI_Controller {
       $this->load->view('user/product/createNewProduct');
       
 	}
-	/*controller function  in creating new store*/
-	public function getvar(){
-		
-	}
-    /*controller function in updating store*/
+	
 	Public function update($id)
 	{
 		
@@ -143,6 +139,16 @@ class Product extends CI_Controller {
     {
     	 $store = $this->product->get_storename_by_id($id); 
     	 //var_dump($store);
+    }
+    public function storeProducts($id = null){
+    	 if ($id == null) {
+    	 	return;
+    	 }else{
+    	 	$storeProfile['profile']= $this->store->view($id);
+    	 	$storeProfile['products']=$this->product->view($id);
+            echo "<pre>";
+            print_r($storeProfile);
+          }  
     }
 
 }

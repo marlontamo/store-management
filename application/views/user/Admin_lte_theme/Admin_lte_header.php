@@ -51,6 +51,42 @@
   .content-wrapper{
    height:100%;
   }
+  .small-box-1, .small-box-13{
+    background: red;
+  }
+  .small-box-2, .small-box-14{
+    background: green;
+  }
+  .small-box-3, .small-box-15{
+    background: yellow;
+  }
+  .small-box-4, .small-box-16{
+    background: blue;
+  }
+  .small-box-5, .small-box-17{
+    background: orange;
+  }
+  .small-box-6, .small-box-18{
+    background: violet;
+  }
+  .small-box-7, .small-box-19{
+    background: pink;
+  }
+  .small-box-8, .small-box-20{
+    background: #ccc;
+  }
+  .small-box-9, .small-box-21{
+    background: #ff0;
+  }
+  .small-box-10, .small-box-22{
+    background: #f7f8c7;
+  }
+  .small-box-11, .small-box-23{
+    background: #eee;
+  }
+  .small-box-12, .small-box-24{
+    background: #bcb;
+  }
 </style>
 <body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
 <div class="wrapper">
