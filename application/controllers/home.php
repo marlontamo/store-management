@@ -18,7 +18,7 @@ class Home extends CI_Controller {
 	Public function index()
 	{
 		echo"<h1>hi this is home</h1>";
-		//$this->load->view('home');
+		
 	}
 
 	Public function insert()

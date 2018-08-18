@@ -86,7 +86,7 @@ class Store extends CI_Controller {
 	      echo "<pre>";
 	      print_r($user_name['name'][0]->username);
        //echo json_encode($data);
-         $this->load->view('user/store/storeProfile',$data);
+         $this->load->view('user/store/StoreProfile',$data);
     //$data['storeData'][0]->user_id
 	}
 	/*controller function in deleting store*/

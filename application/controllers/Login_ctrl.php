@@ -181,7 +181,15 @@ class Login_ctrl extends CI_Controller {
         redirect(base_url('login'));
 	}
 	
-	
+	public function contact(){
+		$this->load->view('user/login/Admin_lte_header');
+		echo "<div class='row'><div class='col-md-4'></div>
+    <div class='center-block text-center col-md-4'>
+      <h1>Hello World</h1>
+    </div><div class='col-md-4'></div>
+  </div>";
+		$this->load->view('user/login/Admin_lte_footer');
+	}
 	
 }
 
